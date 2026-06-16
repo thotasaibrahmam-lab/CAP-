@@ -1,0 +1,24 @@
+{
+  "xsappname": "project2-xsuaa",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Display",
+      "description": "Read access"
+    },
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Viewer"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Read only role",
+      "scope-references": [
+        "$XSAPPNAME.Display"
+      ]
+    }
+  ],
+  "attributes": []
+}

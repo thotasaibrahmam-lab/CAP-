@@ -1,0 +1,58 @@
+<mvc:View
+    id="view1"
+    controllerName="project2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="pageView1" title="Purchase Order List">
+
+        <VBox id="mainVBox1" class="sapUiSmallMargin">
+
+            <Title id="titlePO" text="Purchase Order Headers"/>
+
+            <Table
+                id="poTable"
+                items="{/PurchaseOrderHeaders}">
+
+                <!-- Columns -->
+                <columns>
+
+                    <Column id="colPONumber">
+                        <Text id="txtColPONumber" text="PO Number"/>
+                    </Column>
+
+                    <Column id="colVendor">
+                        <Text id="txtColVendor" text="Vendor Name"/>
+                    </Column>
+
+                    <Column id="colDate">
+                        <Text id="txtColDate" text="Order Date"/>
+                    </Column>
+
+                    <Column id="colAmount">
+                        <Text id="txtColAmount" text="Total Amount"/>
+                    </Column>
+
+                </columns>
+
+                <!-- Rows -->
+                <items>
+                    <ColumnListItem id="rowTemplate">
+
+                        <cells>
+                            <Text id="cellPONumber" text="{poNumber}"/>
+                            <Text id="cellVendor" text="{vendorName}"/>
+                            <Text id="cellDate" text="{orderDate}"/>
+                            <Text id="cellAmount" text="{totalAmount}"/>
+                        </cells>
+
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </VBox>
+
+    </Page>
+
+</mvc:View>

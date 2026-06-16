@@ -1,18 +1,47 @@
 {
-  "name": "capbms_f",
+  "name": "fiori",
   "version": "1.0.0",
   "dependencies": {
-    "@sap/cds": "^9.9.1",
-    "@sap/cds-dk": "^9.9.2"
+    "@cap-js/hana": "^2.8.0",
+    "@sap/approuter": "^22.0.1",
+    "@sap/cds": "^9.9.0",
+    "@sap/xssec": "^4.13.0"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2.4",
+    "@cap-js/sqlite": "^2.4.0",
     "@sap/cds-dk": "^9.9.2",
-    "express": "^5.2.1",
-    "sqlite": "^5.1.1"
+    "cds-plugin-ui5": "^0.13.0"
+  },
+  "overrides": {
+    "@sap/cds": "^9.9.0"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-project2": "cds watch --open project2/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
-  "private": true
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/project1"
+  ],
+  "cds": {
+    "requires": {
+      "[development]": {
+        "auth": "dummy",
+        "db": {
+          "kind": "hana"
+        }
+      },
+      "[production]": {
+        "auth": "xsuaa",
+        "db": {
+          "kind": "hana",
+          "service": "Zhdi3"
+        }
+      }
+    }
+  }
 }

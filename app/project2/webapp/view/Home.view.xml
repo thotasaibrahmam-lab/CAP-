@@ -1,0 +1,101 @@
+<mvc:View
+    id="homeView"
+    controllerName="project2.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    displayBlock="true">
+
+    <Page id="homePage" title="SAP BTP Business Dashboard">
+
+        <VBox id="mainVBox" class="sapUiSmallMargin">
+
+            <Title id="titleBusinessApps" text="Business Applications"/>
+
+            <FlexBox id="flexCards" wrap="Wrap" width="100%" justifyContent="SpaceBetween">
+
+                <!-- Card 1 -->
+                <f:Card id="cardSD" width="300px">
+                    <f:header>
+                        <card:Header
+                            id="headerSD"
+                            title="SD Department"
+                            subtitle="Sales Reports"
+                            iconSrc="sap-icon://sales-order"/>
+                    </f:header>
+                    <f:content>
+                        <VBox id="vbSD" class="sapUiSmallMargin">
+                            <Text id="txtSD" text="Sales Dashboard"/>
+                            <Button id="btnSD"
+                                text="Open Reports"
+                                press="onNavigateToReport"
+                                type="Emphasized"/>
+                        </VBox>
+                    </f:content>
+                </f:Card>
+
+                <!-- Card 2 -->
+                <f:Card id="cardMM" width="300px">
+                    <f:header>
+                        <card:Header
+                            id="headerMM"
+                            title="MM Department"
+                            subtitle="Procurement"
+                            iconSrc="sap-icon://shipping-status"/>
+                    </f:header>
+                    <f:content>
+                        <VBox id="vbMM" class="sapUiSmallMargin">
+                            <Text id="txtMM" text="Material Management"/>
+                            <Button id="btnMM"
+                                text="Open Reports"
+                                press="onNavigateToReport"/>
+                        </VBox>
+                    </f:content>
+                </f:Card>
+
+                <!-- Card 3 -->
+                <f:Card id="cardFI" width="300px">
+                    <f:header>
+                        <card:Header
+                            id="headerFI"
+                            title="FI Department"
+                            subtitle="Finance"
+                            iconSrc="sap-icon://account"/>
+                    </f:header>
+                    <f:content>
+                        <VBox id="vbFI" class="sapUiSmallMargin">
+                            <Text id="txtFI" text="Financial Dashboard"/>
+                            <Button id="btnFI"
+                                text="Open Reports"
+                                press="onNavigateToReport"/>
+                        </VBox>
+                    </f:content>
+                </f:Card>
+
+                <!-- Card 4 -->
+                <f:Card id="cardHR" width="300px">
+                    <f:header>
+                        <card:Header
+                            id="headerHR"
+                            title="HR Department"
+                            subtitle="Employee Data"
+                            iconSrc="sap-icon://employee"/>
+                    </f:header>
+                    <f:content>
+                        <VBox id="vbHR" class="sapUiSmallMargin">
+                            <Text id="txtHR" text="HR Dashboard"/>
+                            <Button id="btnHR"
+                                text="Open Reports"
+                                press="onNavigateToReport"/>
+                        </VBox>
+                    </f:content>
+                </f:Card>
+
+            </FlexBox>
+
+        </VBox>
+
+    </Page>
+
+</mvc:View>
